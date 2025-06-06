@@ -68,11 +68,15 @@ async def get_crypto_price(context: commands.Context, *messages):
 
 @bot.command()
 async def get_historic_prices(context: commands.Context, *messages):
+    e_messages = [
+        "Usage: .get_historic_prices crypto_currency base_currency start_date end_date",
+        "start_date, end_date: YYYY-MM-DD",
+        "start_date >= end_date and months <= 25",
+    ]
+
     if len(messages) != 4:
-        await context.send(
-            "Usage: .get_historic_prices crypto_currency base_currency start_date end_date"
-        )
-        await context.send("start_date, end_date: YYYY-MM-DD")
+        for e_message in e_messages:
+            await context.send(e_message)
     else:
         await context.send("Fetching data...")
 
@@ -96,11 +100,8 @@ async def get_historic_prices(context: commands.Context, *messages):
 
             plotter.clear()
         else:
-            await context.send(
-                "Usage: .get_historic_prices crypto_currency base_currency start_date end_date"
-            )
-            await context.send("start_date, end_date: YYYY-MM-DD")
-            await context.send("start_date >= end_date and months <= 25")
+            for e_message in e_messages:
+                await context.send(e_message)
 
 
 # Run the bot with the API token
