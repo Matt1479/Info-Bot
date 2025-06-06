@@ -1,0 +1,5 @@
+datetime
+python-dateutil
+discord.py
+matplotlib
+requests
