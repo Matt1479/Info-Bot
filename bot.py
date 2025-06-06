@@ -74,6 +74,8 @@ async def get_historic_prices(context: commands.Context, *messages):
         )
         await context.send("start_date, end_date: YYYY-MM-DD")
     else:
+        await context.send("Fetching data...")
+
         historic_prices = coinbase.get_historic_prices(
             {
                 "start_date": messages[2],
@@ -90,7 +92,8 @@ async def get_historic_prices(context: commands.Context, *messages):
             plotter.setup("Date", "Amount", "Historic Prices", True, False)
 
             plotter.save("out.png")
-            await context.send("Fetching data...", file=discord.File("out.png"))
+            await context.send(file=discord.File("out.png"))
+
             plotter.clear()
         else:
             await context.send(
