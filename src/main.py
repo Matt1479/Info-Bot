@@ -9,7 +9,7 @@ import requests
 
 # Open token.txt in read mode, store the reference inside of
 # token_file variable
-with open("token.txt", "r") as token_file:
+with open("../token.txt", "r") as token_file:
     # Read a single line and store it inside of token
     token = token_file.readline()
 
@@ -101,8 +101,8 @@ async def hlookup(context: commands.Context, *messages):
             )
             plotter.setup("Date", f"Amount ({messages[1]})", "Historic Prices", True, False)
 
-            plotter.save("out.png")
-            await context.send(file=discord.File("out.png"))
+            plotter.save("../output/out.png")
+            await context.send(file=discord.File("../output/out.png"))
 
             plotter.clear()
         else:
