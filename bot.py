@@ -52,9 +52,11 @@ async def uselessfact(context: commands.Context):
 
 
 @bot.command()
-async def get_crypto_price(context: commands.Context, *messages):
+async def lookup(context: commands.Context, *messages):
+    e_message = f"Usage: .{lookup.name} crypto base"
+
     if len(messages) != 2:
-        await context.send("Usage: .get_crypto_price crypto_currency base_currency")
+        await context.send(e_message)
     else:
         price = coinbase.get_crypto_price(
             currency_pair={"base": messages[1], "crypto": messages[0]}
@@ -63,13 +65,13 @@ async def get_crypto_price(context: commands.Context, *messages):
         if price:
             await context.send(f"{price['amount']:.02f}")
         else:
-            await context.send("Usage: .get_crypto_price crypto_currency base_currency")
+            await context.send(e_message)
 
 
 @bot.command()
-async def get_historic_prices(context: commands.Context, *messages):
+async def hlookup(context: commands.Context, *messages):
     e_messages = [
-        "Usage: .get_historic_prices crypto_currency base_currency start_date end_date",
+        f"Usage: .{hlookup.name} crypto base start_date end_date",
         "start_date, end_date: YYYY-MM-DD",
         "start_date >= end_date and months <= 25",
     ]
