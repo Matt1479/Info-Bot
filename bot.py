@@ -63,7 +63,7 @@ async def lookup(context: commands.Context, *messages):
         )
 
         if price:
-            await context.send(f"{price['amount']:.02f}")
+            await context.send(f"One unit of {messages[0]} costs {price['amount']:,.02f} ({messages[1]})")
         else:
             await context.send(e_message)
 
