@@ -97,7 +97,7 @@ async def get_historic_prices(context: commands.Context, *messages):
                 helpers.list_dict_to_list(historic_prices, "date"),
                 helpers.list_dict_to_list(historic_prices, "amount"),
             )
-            plotter.setup("Date", "Amount", "Historic Prices", True, False)
+            plotter.setup("Date", f"Amount ({messages[1]})", "Historic Prices", True, False)
 
             plotter.save("out.png")
             await context.send(file=discord.File("out.png"))
