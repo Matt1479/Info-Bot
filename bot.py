@@ -80,13 +80,17 @@ async def get_historic_prices(context: commands.Context, *messages):
     else:
         await context.send("Fetching data...")
 
-        historic_prices = coinbase.get_historic_prices(
-            {
-                "start_date": messages[2],
-                "end_date": messages[3],
-                "currency_pair": {"base": messages[1], "crypto": messages[0]},
-            }
-        )
+        try:
+            historic_prices = coinbase.get_historic_prices(
+                {
+                    "start_date": messages[2],
+                    "end_date": messages[3],
+                    "currency_pair": {"base": messages[1], "crypto": messages[0]},
+                }
+            )
+        # Also catch HTTP Errors
+        except Exception as e:
+            return await context.send(f"Could not fetch data (reason: {e}).")
 
         if historic_prices:
             plotter.plot(

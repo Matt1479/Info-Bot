@@ -132,7 +132,7 @@ class Coinbase:
                         }
                     )
                 else:
-                    raise Exception(f"Error: {response.status_code}")
+                    raise Exception(response.json()["error"])
 
             return historic_prices
         else:
