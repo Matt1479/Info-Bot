@@ -80,8 +80,8 @@ class Coinbase:
         if calc_n_months_between_dates(
             params["start_date"], params["end_date"]
         ) > 25 or datetime.strptime(
-            params["start_date"], "%Y-%m-%d"
-        ) > datetime.strptime(params["end_date"], "%Y-%m-%d"):
+            params["start_date"], "%Y-%m"
+        ) > datetime.strptime(params["end_date"], "%Y-%m"):
             return False
 
         # Unpack
@@ -100,9 +100,9 @@ class Coinbase:
                 try:
                     # Unpack
                     start_date = datetime.strptime(
-                        params["start_date"], "%Y-%m-%d"
+                        params["start_date"], "%Y-%m"
                     ).date()
-                    end_date = datetime.strptime(params["end_date"], "%Y-%m-%d").date()
+                    end_date = datetime.strptime(params["end_date"], "%Y-%m").date()
                 except ValueError:
                     return False
             else:

@@ -72,7 +72,7 @@ async def lookup(context: commands.Context, *messages):
 async def hlookup(context: commands.Context, *messages):
     e_messages = [
         f"Usage: .{hlookup.name} crypto base start_date end_date",
-        "start_date, end_date: YYYY-MM-DD",
+        "start_date, end_date: YYYY-MM",
         "start_date >= end_date and months <= 25",
     ]
 

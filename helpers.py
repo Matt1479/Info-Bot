@@ -75,6 +75,6 @@ def calc_n_months_between_dates(start, end):
     """
     Calculate the number of months between two dates.
     """
-    start_dt = datetime.strptime(start, "%Y-%m-%d")
-    end_dt = datetime.strptime(end, "%Y-%m-%d")
+    start_dt = datetime.strptime(start, "%Y-%m")
+    end_dt = datetime.strptime(end, "%Y-%m")
     return len([dt for dt in rrule(MONTHLY, dtstart=start_dt, until=end_dt)]) - 1
