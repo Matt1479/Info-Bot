@@ -1,4 +1,4 @@
-# Info Bot
+# Crypto Discord Bot
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## About The Project
 
-**Info Bot** is a Discord bot that pulls real-time and historical cryptocurrency data using the [Coinbase API](https://docs.cdp.coinbase.com/coinbase-app/docs/track/api-prices). It allows users to look up both current and past crypto prices within a Discord server through simple commands.
+**Crypto Discord Bot** is a Discord bot that pulls real-time and historical cryptocurrency data using the [Coinbase API](https://docs.cdp.coinbase.com/coinbase-app/docs/track/api-prices). It allows users to look up both current and past crypto prices within a Discord server through simple commands.
 
 **Key features**:
 - Look up current prices of cryptocurrencies in various base currencies (e.g. BTC in USD).
@@ -30,7 +30,7 @@ Install Python: https://www.python.org/downloads/
 
 1. Clone this repository:
     ```
-    git clone https://github.com/Matt1479/Info-Bot
+    git clone https://github.com/Matt1479/Crypto-Discord-Bot
     ```
 2. Create a file called `token.txt`, and place your API key inside it.
 3. Install Python libraries:
@@ -39,7 +39,7 @@ Install Python: https://www.python.org/downloads/
     ```
 4. Change Git remote URL to avoid accidental pushes to the original repository.
     ```
-    git remote set-url origin github_username/https://github.com/Matt1479/Info-Bot
+    git remote set-url origin github_username/https://github.com/Matt1479/Crypto-Discord-Bot
     git remote -v # confirm the changes
     ```
 
